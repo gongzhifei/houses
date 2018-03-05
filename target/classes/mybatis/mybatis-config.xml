@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 缓存开启关闭  多机情况下当数据有更新的时候不会刷新缓存故此关闭 -->
+        <setting name="cacheEnabled" value="false"/>
+        <!-- 开启驼峰转换 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 在插入数据的时候自动生成ID -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- 缓存prepared statements提升性能 -->
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 设置事物的超时时间 -->
+        <setting name="defaultStatementTimeout" value="600"/>
+    </settings>
+    
+    <typeAliases>
+        <typeAlias type="com.gzf.house.commonm.model.User"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="mappers/user.xml"/>
+    </mappers>
+
+</configuration>
